@@ -1,0 +1,27 @@
+{
+    "visual": {
+        "name": "pie2pie",
+        "displayName": "pie2pie",
+        "guid": "pie2pieCA1A9C2D4FA5404F9D5702C15CAF72D9",
+        "visualClassName": "Visual",
+        "version": "1.4.0",
+        "description": "pie of pie chart",
+        "supportUrl": "none",
+        "gitHubUrl": "none"
+    },
+    "apiVersion": "2.6.0",
+    "author": {
+        "name": "Davis ZHANG",
+        "email": "hooooooong@outlook.com"
+    },
+    "assets": {
+        "icon": "assets/pie2pieIcon.png"
+    },
+    "externalJS": null,
+    "style": "style/visual.less",
+    "capabilities": "capabilities.json",
+    "dependencies": "dependencies.json",
+    "stringResources": ["stringResources/en-US.json",
+        "stringResources/zh-CN.json",
+        "stringResources/zh-TW.json"]
+}

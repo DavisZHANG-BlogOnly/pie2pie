@@ -1,0 +1,354 @@
+{
+  "dataRoles": [
+    {
+      "displayName": "Category",
+      "displayNameKey": "Category",
+      "kind": "Grouping",
+      "name": "C1"
+    },
+    {
+      "displayName": "Values",
+      "displayNameKey": "Values",
+      "kind": "Measure",
+      "name": "V1"
+    }
+  ],
+  "dataViewMappings": [
+    {
+      "conditions": [
+        {
+            "C1":
+            {
+                "max": 1
+            },
+            "V1":
+            {
+                "max": 1
+            }
+        } ],
+      "scriptResult": {
+        "dataInput": {
+          "table": {
+            "rows": {
+              "select": [
+                {
+                  "for": {
+                    "in": "C1"
+                  }
+                },
+                {
+                  "for": {
+                    "in": "V1"
+                  }
+                }
+              ],
+              "dataReductionAlgorithm": {
+                "top": {
+                  "count":3000
+                }
+              }
+            }
+          }
+        },
+        "script": {
+          "scriptProviderDefault": "R",
+          "scriptOutputType": "html",
+          "source": {
+            "objectName": "myCustomVisualsObj",
+            "propertyName": "show"
+          },
+          "provider": {
+            "objectName": "myCustomVisualsObj",
+            "propertyName": "show"
+          }
+        }
+      }
+    }
+  ],
+  "objects": {
+    "myCustomVisualsObj": {
+      "displayName": "Base Config",
+      "displayNameKey": "BaseConfig",     
+      "properties": {
+        "setDataLabels": {
+          "displayName": "Set Labels",
+          "displayNameKey": "SetLabels",
+          "type": {
+            "enumeration": [
+              {
+                "displayName": "Values",
+                "displayNameKey": "_Values",
+                "value": "value"
+              },
+              {
+                "displayName": "Category",
+                "displayNameKey": "_Category",
+                "value": "label"
+              },
+              {
+                "displayName": "Percent",
+                "displayNameKey": "Percent",
+                "value": "percent"
+              },
+              {
+                "displayName": "Category&Values",
+                "displayNameKey": "Category&Values",
+                "value": "label+value"
+              },
+              {
+                "displayName": "Category&Percent",
+                "displayNameKey": "Category&Percent",
+                "value": "label+percent"
+              },
+              {
+                "displayName": "All",
+                "displayNameKey": "All",
+                "value": "label+value+percent"
+              },
+              {
+                "displayName": "None",
+                "displayNameKey": "None",
+                "value": "none"
+             }
+           ] 
+         }         
+        },
+        "labelsPosition": {
+          "displayName": "Labels Position",
+          "displayNameKey": "LabelsPosition",
+          "description": "Labels Position",
+          "type": {
+            "enumeration": [
+              {
+                "displayName": "Outside",
+                "displayNameKey": "Outside",
+                "value": "outside"
+              },
+              {
+                "displayName": "Inside",
+                "displayNameKey": "Inside",
+                "value": "inside"
+              },
+              {
+                "displayName": "Auto",
+                "displayNameKey": "Auto",
+                "value": "auto"
+              }
+            ]          
+        }
+      },
+      "labelsColor": {
+        "displayName": "Text Color",
+        "displayNameKey": "TextColor",
+        "type": {
+          "fill": {
+            "solid": {
+              "color": true
+            }
+          }
+        }
+      },
+        "lineColor": {
+          "displayName": "Theme Color",
+          "displayNameKey": "ThemeColor",
+          "type": {
+            "fill": {
+              "solid": {
+                "color": true
+              }
+            }
+          }
+        },
+        "mergeSmallerValues": {
+          "displayName": "Merge Smaller Values",
+          "displayNameKey": "MergeSmallerValues",
+          "description": "Merge Smaller Values",
+          "type": {
+            "bool": true
+          }
+        },
+        "showLine": {
+          "displayName": "Show Lines",
+          "displayNameKey": "ShowLines",
+          "description": "Show Lines",
+          "type": {
+            "bool": true
+          }
+        },
+        "showLegend": {
+          "displayName": "Show Legend",
+          "displayNameKey": "ShowLegend",
+          "description": "Show Legend",
+          "type": {
+            "bool": true
+          }
+        },
+        "showLegendborder": {
+          "displayName": "Show Legend Border",
+          "displayNameKey": "ShowLegendBorder",
+          "description": "Show Legend Border",
+          "type": {
+            "bool": true
+          }
+        },
+        "legendTextsize": {
+          "displayName": "Legend Text Size",
+          "displayNameKey": "LegendTextSize",
+          "description": "Legend Text Size",
+          "type": {
+            "numeric": true
+          }
+        },
+        "LegendPosition": {
+          "displayName": "Legend Position",
+          "displayNameKey": "LegendPosition",
+          "description": "Legend Position",
+          "type": {
+            "enumeration": [
+              {
+                "displayName": "Top",
+                "displayNameKey": "Top",
+                "value": "top"
+              },
+              {
+                "displayName": "Bottom",
+                "displayNameKey": "Bottom",
+                "value": "bottom"
+              }
+            ]          
+        }
+      }
+      }
+    },
+    "sizeConfig":{
+      "displayName":"Size Config",
+      "displayNameKey": "SizeConfig",
+      "properties": {
+        "direction": {
+          "displayName": "Direction",
+          "displayNameKey": "direction",
+          "description": "direction",
+          "type": {
+            "enumeration": [
+              {
+                "displayName": "Default",
+                "displayNameKey": "Default",
+                "value": "default"
+              },
+              {
+                "displayName": "Reverse",
+                "displayNameKey": "Reverse",
+                "value": "reverse"
+              }
+            ]
+            }
+          },
+        "size_a": {
+          "displayName": "Main-Pie Ring Radius",
+          "displayNameKey": "MainPieRingRadius",
+          "description": "SubPieRingRadius",
+          "type": {
+            "enumeration": [
+              {
+                "displayName": "0.0",
+                "value": "0"
+              },
+              {
+                "displayName": "0.1",
+                "value": "0.1"
+              },
+              {
+                "displayName": "0.2",
+                "value": "0.2"
+              },
+              {
+                "displayName": "0.3",
+                "value": "0.3"
+              },
+              {
+                "displayName": "0.4",
+                "value": "0.4"
+              },
+              {
+                "displayName": "0.5",
+                "value": "0.5"
+              },
+              {
+                "displayName": "0.6",
+                "value": "0.6"
+              },
+              {
+                "displayName": "0.7",
+                "value": "0.7"
+              },
+              {
+                "displayName": "0.8",
+                "value": "0.8"
+              }
+            ]
+          }
+        },
+        "size_b": {
+          "displayName": "Sub-Pie Ring Radius",
+          "displayNameKey": "SubPieRingRadius",
+          "description": "SubPieRingRadius",
+          "type": {
+            "enumeration": [
+              {
+                "displayName": "0.0",
+                "value": "0"
+              },
+              {
+                "displayName": "0.1",
+                "value": "0.1"
+              },
+              {
+                "displayName": "0.2",
+                "value": "0.2"
+              },
+              {
+                "displayName": "0.3",
+                "value": "0.3"
+              },
+              {
+                "displayName": "0.4",
+                "value": "0.4"
+              },
+              {
+                "displayName": "0.5",
+                "value": "0.5"
+              },
+              {
+                "displayName": "0.6",
+                "value": "0.6"
+              },
+              {
+                "displayName": "0.7",
+                "value": "0.7"
+              },
+              {
+                "displayName": "0.8",
+                "value": "0.8"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "otherConfig":{
+      "displayName":"Other Config",
+      "displayNameKey": "OtherConfig",
+      "properties": {
+        "plotlyBar": {
+          "displayName": "Display Tool Bar",
+          "displayNameKey": "DisplayToolBar",
+          "description": "Mode Bar by Plotly",
+          "type": {
+            "bool": true
+          }
+        }
+      }
+    }
+  },
+  "suppressDefaultTitle": true
+}
